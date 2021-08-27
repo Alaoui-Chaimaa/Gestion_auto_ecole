@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+.body {
+    font-family: "Lato", sans-serif;
+}
+
+
+
+.main-head{
+    height: 150px;
+    background: #FFF;
+   
+}
+
+.sidenav {
+    height: 100%;
+    background-color: blue;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+.main {
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 10%;
+    }
+
+    .register-form{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 40%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 50%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+
+.login-main-text{
+    margin-top: 15%;
+    padding: 60px;
+    color: #fff;
+    font-size:25px;
+    
+}
+
+.login-main-text h2{
+    font-weight: bold;
+}
+
+.btn-black{
+    background-color: blue;
+    color: #fff;
+}
+</style>
+<meta charset="utf-8">
+</head>
+<div class="sidenav">
+         <div class="login-main-text">
+            <h2><b>Auto Ecole Nassiri</b><br><b>Page d'authentification</b></h2>
+            <p><b>S'authentifier ici afin d'accéder à l'application.</b></p>
+              <img src="/images/drive.png" style="height:220px;width:300px">
+         </div>
+      </div>
+      <div class="main">
+         <div class="col-md-6 col-sm-12">
+            <div class="login-form">
+               <form th:action="@{/login}" method="post" style="max-width:400px;margin:0 auto;">
+                 <div class="border border-secondary p-3 rounded">
+                  <div class="form-group">
+                     <label>Login</label>
+                     <input type="text" name="username" class="form-control" placeholder="Login" required autofocus>
+                  </div>
+                  <div class="form-group">
+                     <label>Mot de passe</label>
+                     <input type="password" name="password" class="form-control" placeholder="Mot de passe" required>
+                  </div>
+                  <button type="submit" class="btn btn-black"><b>S'authentifier</b></button>
+                </div>
+               </form>
+            </div>
+         </div>
+      </div>

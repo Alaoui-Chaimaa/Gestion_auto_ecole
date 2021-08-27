@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Vehicules</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="true" href="candidats">Candidats</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/">Véhicules</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/moniteurs">Moniteurs</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/depenses">Dépenses</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/examens">Examens</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+ </div>
+<div align="center">
+    <h1><b>Véhicules</b></h1>
+
+    <br/><br/>
+    <table border="1" cellpadding="10" class="table">
+        <thead class="table-light">
+            <tr>
+                <th>Matricule</th>
+                <th>Type</th>
+                <th>Marque</th>
+                <th>Date Assurance</th>
+                <th>Date Fin Assurance</th>
+                <th>Date Visite Technique</th>
+                <th>Date  Fin Visite Technique</th>
+                <th> Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="vehicule : ${listVehicules}">
+                <td th:text="${vehicule.matricule}">Matricule</td>
+                <td th:text="${vehicule.type}">Type</td>
+                <td th:text="${vehicule.marque}">Marque</td>
+                <td th:text="${vehicule.date_assurance}">Date Assurance</td>
+                <td th:text="${vehicule.date_fin_assurance}">Date Fin Assurance</td>
+                <td th:text="${vehicule.date_visite_technique}">Date Visite Technique</td>
+                <td th:text="${vehicule.date_fin_visite_technique}">Date Fin Visite Technique</td>
+                 <td>
+                  <a th:href="@{/edit/{matricule}(matricule=${vehicule.matricule})}"><button class="btn"><i class="fa fa-edit"></i></button></a>
+                    <a th:href="@{/delete/{matricule}(matricule=${vehicule.matricule})}"><button class="btn"><i class="fa fa-trash"></i></button></a>
+                  
+             
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+  <a href="/ajouter_vehicule"><button class="btn btn-info"><i class="fa fa-plus"></i>  Ajouter un nouveau véhicule</button></a>
+</div>   
+</body>
+</html>

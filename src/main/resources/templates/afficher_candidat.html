@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<div align="center">
+<h1>Fiche d'informations</h1>
+
+<br/><br/>
+
+<table border="1"cellpadding="10">
+
+<tr><td>Photo:</td><td><img th:src="${candidat.getPhotosImagePath()}" style="height:50px;width:50px"/></td></tr>
+<tr><td>ID:</td><td th:text="${candidat.id}"></td></tr>
+<tr><td>Nom:</td><td th:text="${candidat.nom}"></td></tr>
+<tr><td>CIN:</td><td th:text="${candidat.cin}"></td></tr>
+<tr><td>Date de Naissance:</td><td th:text="${candidat.dateNaissance}"></td></tr>
+<tr><td>Adresse:</td><td th:text="${candidat.adresse}"></td></tr>
+<tr><td>Télephone:</td><td th:text="${candidat.tel}"></td></tr>
+<tr><td>Catégorie Permis:</td><td th:text="${candidat.categorie_permis}"></td></tr>
+<tr><td>Date Inscription:<td th:text="${candidat.date_inscription}"></td></tr>
+<tr><td>Numéro Ministre:</td><td th:text="${candidat.numero_ministre}"></td></tr>
+<tr><td>Prix:</td><td th:text="${candidat.prix}"></td></tr>
+
+</table>
+
+</body>
+
+</html>
